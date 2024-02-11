@@ -2,8 +2,19 @@ function refreshweather(response) {
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
     let cityElement = document.querySelector("#city");
+    let descriptionElement=document.querySelector("#description");
+    let humidityElement=document.querySelector("#humidity")
+   let windSpeedElement =document.querySelector("#wind-speed");
+   let timeElement=document.querySelector("#time");
+   let date=new Date(response.data.time*1000);
+   let iconElement=document.querySelector("#icon");
     cityElement.innerHTML = response.data.city;
+    timeElement.innerHTML=formateDte(date);
+    descriptionElement.innerHTML=response.data.condition.description;
+    humidityElement.innerHTML=`${response.data.temperature.humidity}%`;
+    windSpeedElement.innerHTML=`${response.data.wind.speed}km/h`;
     temperatureElement.innerHTML =Math.round(temperature);
+    iconElement.innerHTML=`<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
   }
   
   function handleSearchSubmit(event) {
@@ -17,7 +28,7 @@ function refreshweather(response) {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   
     axios.get(apiUrl).then(refreshweather);
-  }}
+  }
   
   function formatDate(date) {
     let minutes = date.getMinutes();
@@ -42,15 +53,11 @@ function refreshweather(response) {
       "Saturday"
     ];
   
-    let formattedDay = days[day];
-    return `${formattedDay} ${hours}:${minutes}`;
+    let day = days[Date.getDay()];
+    return `${day} ${hours}:${minutes}`;
   }
   
   let searchFormElement = document.querySelector("#search-form");
   searchFormElement.addEventListener("submit", handleSearchSubmit);
-  searchCity("Paris")
+  searchCity("Paris");
   
-  let currentDateELement = document.querySelector("#current-date");
-  let currentDate = new Date();
-  
-  currentDateELement.innerHTML = formatDate(currentDate);
