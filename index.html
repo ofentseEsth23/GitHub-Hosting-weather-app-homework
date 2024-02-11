@@ -16,40 +16,40 @@
   <body>
     <div class="weather-app">
       <header>
-        <form id="search-form">
+        <form  class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-            class="search-input"
+            class="search-form-input"
             id="search-input"
           />
-          <input type="submit" value="Search" class="search-button" />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
-        <div class="current-weather">
+        <div class="weather-app-data">
           <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <p class="current-details">
+            <h1 class="weather-app-city" id="current-city">Paris</h1>
+            <p class="weather-app-details">
               <span id="current-date"></span>, moderate rain <br />
               Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
             </p>
           </div>
-          <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value" id="current-temperature"
-              >24</span
-            ><span class="current-temperature-unit">°C</span>
+          <div class="weather-app-temperature-container">
+            <div class="weather-app-icon">☀️</span
+            ><div class="weather-app-temperature" id="current-temperature"
+              >24</div
+            ><div class="weather-app-unit">°C</divn>
           </div>
         </div>
       </main>
       <footer>
         <p>
           This project was coded by
-          <a href="#" target="_blank">Ofentse Mthimunye</a> and is
-          <a href="#" target="https://github.com/ofentseEsth23/GitHub-Hosting-weather-app-homework"> on GitHub</a> and
-          <a href="#" target="https://fastidious-heliotrope-4dd0b0.netlify.app/">hosted on Netlify</a>
+          <a href="https://github.com/ofentseEsth23" target="_blank">Ofentse Mthimunye</a> and is
+          <a href="https://github.com/ofentseEsth23/GitHub-Hosting-weather-app-homework" target=""> on GitHub </a> and
+          <a href="https://fastidious-heliotrope-4dd0b0.netlify.app/" target="">hosted on Netlify</a>
         </p>
       </footer>
     </div>
