@@ -1,15 +1,16 @@
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#current-temperature");
     let temperature = Math.round(response.data.temperature.current);
-    let cityElement = document.querySelector("#current-city");
+    
     cityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML = temperature;
   }
   
-  function search(event) {
+  function handleSearchSubmit(event) {
     event.preventDefault();
-    let searchInputElement = document.querySelector("#search-input");
-    let city = searchInputElement.value;
+    let searchInput = document.querySelector("#search-form-input");
+    let cityElement = document.querySelector("#city");
+     cityElement.innerHTML= searchInput.value;
   
     let apiKey = "b2a5adcct04b33178913oc335f405433";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -44,8 +45,8 @@ function displayTemperature(response) {
     return `${formattedDay} ${hours}:${minutes}`;
   }
   
-  let searchForm = document.querySelector("#search-form");
-  searchForm.addEventListener("submit", search);
+  let searchFormElement = document.querySelector("#search-form");
+  searchFormElement.addEventListener("submit", handleSearchSubmit);
   
   let currentDateELement = document.querySelector("#current-date");
   let currentDate = new Date();
