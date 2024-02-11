@@ -24,7 +24,7 @@ function refreshweather(response) {
     
   }
      function searchCity(city){
-    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiKey = "475e473a00bd33f3c56odtade0249561";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   
     axios.get(apiUrl).then(refreshweather);
@@ -52,7 +52,7 @@ function refreshweather(response) {
       "Saturday"
     ];
   
-    let day = days[Date.getDay()];
+    let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
   }
   
