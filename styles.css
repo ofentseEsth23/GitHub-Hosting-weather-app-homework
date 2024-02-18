@@ -1,5 +1,5 @@
 body {
-    background: #f187f5;
+    background:#59A8DB ;
     font-family: "Roboto", sans-serif;
   }
   
@@ -8,7 +8,7 @@ body {
   }
   
   .weather-app {
-    background: white;
+    background: #BB2C51;
     max-width: 600px;
     margin: 48px auto;
     padding: 30px;
