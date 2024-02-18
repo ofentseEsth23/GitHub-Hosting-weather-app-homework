@@ -1,5 +1,5 @@
 body {
-    background: #f9f7fe;
+    background: #f187f5;
     font-family: "Roboto", sans-serif;
   }
   
@@ -68,7 +68,7 @@ body {
   }
   
   .weather-app-details strong {
-    color: #3d0af8;
+    color: #f80a8d;
   }
   
   .weather-app-temperature-container{
